@@ -90,7 +90,7 @@ class VerifyClient(basic.LineReceiver):
 
     def send(self, msg):
         print "> {:s}".format(msg)
-        self.transport.write(msg + '\n')
+        self.transport.write(msg + '\r\n')
 
 def default_ehlo():
     # TODO get local hostname

@@ -1,6 +1,10 @@
 Tests whether an email address is deliverable without actually sending mail to
 that address.  Recipient is not notified.
 
+Prerequisites: `click` and `twisted`.
+
+    $ pip install -r requirements.txt
+
 Usage:
 
     $ python -m mailverify --help

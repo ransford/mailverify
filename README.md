@@ -12,9 +12,20 @@ Usage:
       -f, --fromaddr TEXT  Sender address
       --help               Show this message and exit.
 
-For example:
+For example, say you're wondering whether ben@ransford.org is deliverable:
 
-     % python -m mailverify aspmx.l.google.com ben@ransford.org
+    $ host -t mx ransford.org
+    ransford.org mail is handled by 30 ASPMX4.GOOGLEMAIL.COM.
+    ransford.org mail is handled by 10 ASPMX.L.GOOGLE.COM.
+    ransford.org mail is handled by 30 ASPMX2.GOOGLEMAIL.COM.
+    ransford.org mail is handled by 30 ASPMX3.GOOGLEMAIL.COM.
+    ransford.org mail is handled by 20 ALT2.ASPMX.L.GOOGLE.COM.
+    ransford.org mail is handled by 30 ASPMX5.GOOGLEMAIL.COM.
+    ransford.org mail is handled by 20 ALT1.ASPMX.L.GOOGLE.COM.
+
+Choose one of the hosts in the list and test delivery with `mailverify`:
+
+    $ python -m mailverify aspmx.l.google.com ben@ransford.org
     connected!
     < 220 mx.google.com ESMTP r88si6832467pfa.128 - gsmtp
     > EHLO foo.com
